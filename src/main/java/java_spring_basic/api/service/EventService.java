@@ -29,7 +29,7 @@ public class EventService {
 
 
     @Autowired
-    private EventMapper eventMapper;
+    private final EventMapper eventMapper;
 
     public Event createEvent(EventRequestDto data){
         String imgUrl = null;

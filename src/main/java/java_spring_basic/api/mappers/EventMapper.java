@@ -10,12 +10,9 @@ import java_spring_basic.api.domain.event.Event;
 import java_spring_basic.api.domain.event.EventRequestDto;
 
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface EventMapper {
     
-
-
-
         @Mappings({
                 @Mapping(target = "id", ignore = true),
                 @Mapping(source = "dto.title", target = "title"),
