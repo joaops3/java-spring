@@ -18,6 +18,8 @@ public class EventController {
 
     private final EventService eventService;
 
+   
+
     @PostMapping(path = "/", consumes = "multipart/form-data")
     public ResponseEntity<Event> create(@Valid @ModelAttribute EventRequestDto eventDto){
 

@@ -26,10 +26,6 @@ public class UserController {
 
     private UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
     
     @PostMapping("/")
     public ResponseEntity<User> create(@RequestBody UserRequestDto userDto){

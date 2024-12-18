@@ -5,7 +5,7 @@ import java_spring_basic.api.domain.event.Event;
 import java_spring_basic.api.domain.event.EventRequestDto;
 import java_spring_basic.api.mappers.EventMapper;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ import java.nio.ByteBuffer;
 import java.util.UUID;
 
 @Service
-@Slf4j
+// @Slf4j
 @RequiredArgsConstructor
 public class EventService {
 
@@ -48,7 +48,7 @@ public class EventService {
         // newEvent.setImgUrl(imgUrl);
         // newEvent.setRemote(data.remote());
 
-        var newEvent = eventMapper.ToEntity(data, imgUrl);
+        Event newEvent = eventMapper.ToEntity(data, imgUrl);
 
 
         return newEvent;
@@ -72,7 +72,7 @@ public class EventService {
                 .build();
             return s3Client.utilities().getUrl(urlRequest).toString();
         }catch(Exception e){
-            log.error("erro ao subir arquivo: {}", e.getMessage());
+            // log.error("erro ao subir arquivo: {}", e.getMessage());
             return "";
         }
     }

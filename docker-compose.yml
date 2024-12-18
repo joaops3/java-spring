@@ -5,7 +5,11 @@ services:
     image: postgres
     restart: always
     shm_size: 128mb
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: javadb
     volumes:
       - ./data:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: example
+    ports:
+      - '5432:5432'
